@@ -1,0 +1,62 @@
+<html>
+
+<head>
+    <title>MadLibs</title>
+    <link type="text/css" rel="stylesheet" href="css/style.css">
+    <script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
+    <script type="text/javascript" src="bower_components/angular-route/angular-route.min.js"></script>
+    <script src="https://code.angularjs.org/1.5.5/angular-messages.js" type="text/javascript"></script>
+    <script type="text/javascript" src="controllers/madlibsController.js"></script>
+</head>
+
+<body ng-app="madlibs">
+    <div class="page-container" ng-controller="madlibsController as vm">
+        <header class="imageBlock">
+            <span class="happyFace">
+              <img src="images/happy-face.jpeg" height="150" width="201" alt="Smiling Face">
+            </span>
+            <span class="madLibImg">
+              <img src="images/madLib.jpeg" height="116" width="360" alt="Mad Libs">
+            <!--   <h1>ngMadLibs</h1> -->
+              <subsection ><h1 class="masthead-intro"> Automate This! </h1></subsection>
+            </span>
+        </header>
+        <form name="vm.madLibForm" novalidate class="formContainer" ng-submit="vm.madLibForm.$valid && vm.submitForm()" ng-show="vm.enableMadlibs">
+            <div class="info-container">
+                <h1 class="info-heading">Provide the following words</h1>
+                <div class="info">
+                    <input type="text" placeholder="Name" ng-model="vm.firstName" required name="firstName">
+                    <input type="text" placeholder="Job Title" ng-model="vm.jobTitle" required name="jobTitle">
+                    <input type="text" placeholder="Tedious task" required ng-model="vm.tediousTask" name="tediousTask">
+                    <input type="text" placeholder="Dirty task" required ng-model="vm.dirtyTask" name="dirtyTask">
+                    <input type="text" placeholder="Celebrity" required ng-model="vm.celebrity" name="celebrity">
+                    <input type="text" placeholder="Useless skill" required ng-model="vm.uselessSkill" name="uselessSkill">
+                    <input type="text" placeholder="Obnoxious celebrity" required ng-model="vm.obnoxiousCelebrity" name="obnoxiousCelebrity">
+                    <input type="number" placeholder="Huge number" required min="0" ng-model="vm.hugeNumber" name="hugeNumber">
+                    <input type="text" placeholder="Adjective" required ng-model="vm.adjective" name="adjective">
+                </div>
+                <button class="btn-generate" type="submit">Generate My Mad Lib</button>
+        
+            </div>
+        </form>
+        <div class="displayError ng-pristine" ng-if="vm.madLibForm.$submitted && vm.madLibForm.$invalid" ng-messages="vm.madLibForm.firstName.$error  || vm.madLibForm.jobTitle.$error || vm.madLibForm.tediousTask.$error || vm.madLibForm.dirtyTask.$error || vm.madLibForm.celebrity.$error || vm.madLibForm.uselessSkill.$error || vm.madLibForm.obnoxiousCelebrity.$error || vm.madLibForm.hugeNumber.$error || vm.madLibForm.adjective.$error">
+            <span class="error" ng-message="required">**Please fill out all fields!!</span>
+        </div>
+        <form ng-submit="vm.startOver()">
+            <div class="content-container" ng-hide="vm.disableMadLibs">
+                <div>
+                    <p>
+                        <span class="substituteWord">{{vm.firstName}}</span> was a <span class="substituteWord">{{vm.jobTitle}}</span> who loved technology. Although he/she loved parts of his/her job, he/she absolutely hated <span class="substituteWord">{{vm.tediousTask}}</span> and <span class="substituteWord">{{vm.dirtyTask}}</span>. So, <span class="substituteWord">{{vm.firstName}}</span> met with his/her life mentor <span class="substituteWord">{{vm.celebrity}}</span> who told him/her to learn how to <span class="substituteWord">{{vm.uselessSkill}}</span> with Thinkful.
+                        <br> Thinkful didn't offer a course on <span class="substituteWord">{{vm.uselessSkill}}</span> so he studied programming instead.
+                    </p>
+                    <p>
+                        What a great decision! With his/her new skills, <span class="substituteWord">{{vm.firstName}}</span> built a(n) <span class="substituteWord">{{vm.adjective}}</span> robot named <span class="substituteWord">{{vm.obnoxiousCelebrity}}</span> that not only loved <span class="substituteWord">{{vm.dirtyTask}}</span> but did it <span class="substituteWord">{{vm.hugeNumber | number}}</span> times faster.
+                    </p>
+                </div>
+                <input type="submit" value="Start Over" id="reset" class="btn-start"></input>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

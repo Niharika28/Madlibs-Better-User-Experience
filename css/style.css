@@ -1,0 +1,107 @@
+.page-container {
+  width: 800px;
+  height: 1000px;
+  margin: 5px auto;
+  border: 2px solid black;
+  border-radius: 12px;
+ }
+
+.formContainer{
+  padding: 10px;
+  overflow: hidden;
+}
+.imageBlock {
+  padding: 10px 0;
+}
+.happyFace {
+  margin-bottom: 0.1em;
+  position: relative;
+  left: 80px;
+  top: 70px;
+}
+.madLibImg {
+  margin-bottom: 0.1em;
+  position: absolute;
+  right: 350px;
+  top: 70px;
+}
+.masthead-intro {
+  text-align:  center;
+  margin-top: -0.2em;
+  font-size: 3em;
+  padding: 30px;
+}
+.info-container {
+  margin-top: 80px;
+  margin-left: 100px;
+  margin-bottom: 20px
+  text-align: left;
+  padding-top: 5px;
+}
+.info-heading {
+  margin-top: 80px;
+  margin-left: 30px;
+  margin-bottom: 5px;
+}
+.info {
+  position: relative;
+  margin-top: 10px;
+  margin-left: 30px;
+  margin-bottom: 5px;
+  float: right;
+  padding: 10px 50px;
+  font-size: 18px;
+
+
+}
+.info input{
+  margin: 5px;
+  padding: 10px;
+  border-radius: 10px;
+  border: 2px solid;
+}
+.info h2 {
+  text-align: left;
+}
+
+.content-container {
+  margin-top: 200px;
+  margin-left: 100px;
+  margin-bottom: 20px
+  text-align: left;
+  padding-top: 20px;
+  font-size: 22px;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+}
+.substituteWord {
+  color:red;
+}
+.btn-generate {
+  position: relative;
+  left: 500px;
+  border-radius: 12px;
+  padding: 16px 8px;
+  font-weight: bold;
+}
+
+.displayError {
+  position: relative;
+  left:200px;
+}
+
+.btn-start {
+  position: relative;
+  left: 500px;
+  border-radius: 12px;
+  padding: 16px 8px;
+ font-weight: bold;
+}
+
+.error {
+  color: red;
+}
+
+ 
+input.ng-dirty {
+    background-color: lightgreen;
+}
